@@ -4,6 +4,8 @@ from flask import Flask
 from .blueprints import register
 from .helpers import scripts, styles
 from .constants import CONSTANTS
+from .blueprints import register
+from .middlewares import not_found
 
 APP = Flask(
   __name__,
@@ -21,3 +23,4 @@ def utility_processor():
   )
 
 register(APP)
+APP.register_error_handler(404, not_found)
