@@ -14,3 +14,4 @@ def index():
   locals['csss'] = ['dist/login']
   locals['jss'] = ['dist/login']
   return render_template('access.html', locals = locals)
+  

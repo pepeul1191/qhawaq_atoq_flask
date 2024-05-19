@@ -5,3 +5,4 @@ pylint
 requests
 pyyaml
 python-dotenv
+SQLAlchemy

@@ -77,3 +77,4 @@ Fuentes:
 + https://github.com/pepeul1191/flask-boilerplate-v2
 + https://www.pylint.org/#install
 + https://stackabuse.com/reading-and-writing-yaml-to-a-file-in-python/
++ https://github.com/pepeul1191/python-bottle-boilerplate
