@@ -6,7 +6,10 @@ view = Blueprint('main', __name__)
 
 @view.route('/', methods=['GET'])
 def home():
-  return render_template('home.html')
+  locals = {}
+  locals['csss'] = ['bootstrap', 'fontawesome']
+  locals['jss'] = ['jquery', 'app']
+  return render_template('home.html', locals = locals)
 
 @view.route('/error/access/<code>', methods=['GET'])
 def error_access(code):
