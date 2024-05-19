@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 from flask import Blueprint, render_template
 
-view = Blueprint('main', __name__)
+view = Blueprint('demo-app-index', __name__)
 
 @view.route('/', methods=['GET'])
 def home():
