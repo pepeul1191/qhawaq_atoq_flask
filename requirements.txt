@@ -4,3 +4,4 @@ gunicorn
 pylint
 requests
 pyyaml
+python-dotenv
