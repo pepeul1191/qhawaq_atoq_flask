@@ -7,6 +7,7 @@ view = Blueprint('main', __name__)
 @view.route('/', methods=['GET'])
 def home():
   locals = {}
+  locals['title'] = 'Bienvenido'
   locals['csss'] = ['bootstrap', 'fontawesome']
   locals['jss'] = ['jquery', 'app']
   return render_template('home.html', locals = locals)

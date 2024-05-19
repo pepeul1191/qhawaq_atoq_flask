@@ -1,14 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  {{ styles(locals['csss'])|safe }}
-  <title>Document</title>
-</head>
-<body>
-  <h1>home</h1>
-  <p>{{ constants['base_url'] }}</p>
-  {{ scripts(locals['jss'])|safe }}
-</body>
-</html>
+{% extends './_blank.html' %}
+
+{% block extra_head %}
+<link href="/style.css" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<h1>home</h1>
+<p>{{constants['base_url']}}</p>
+{% endblock %}
+
+{% block extra_scripts %}
+<script type="text/javascript">
+  alert();
+</script>
+{% endblock %}
