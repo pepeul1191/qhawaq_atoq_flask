@@ -1,0 +1,47 @@
+.btn{
+  border-radius: 0px;
+}
+
+.btn > i {
+  margin-right: 10px;
+}
+
+input[type="text"].form-control, 
+input.form-control, 
+input[type="password"].form-control, 
+input[type="email"].form-control,
+.input-group-text,
+.modal-content,
+.alert { 
+  border-radius: 0px;
+}
+
+nav{
+  margin-bottom: 20px !important;
+}
+
+footer{
+  margin-top: 20px !important;
+}
+
+.pagination-btn{
+  padding-left: 2.5px; 
+  padding-right: 2.5px; 
+  text-align: left;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+table > tfoot > tr > td {
+  padding-top: 10px !important; 
+}
+
+.pagination-btn:hover{
+  cursor: pointer;
+}
+
+select {
+  -webkit-appearance: menulist !important;
+  -moz-appearance: menulist !important;
+  appearance: menulist !important;
+}

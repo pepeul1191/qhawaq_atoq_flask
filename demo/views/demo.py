@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+import os
 from flask import Blueprint, render_template
 
 view = Blueprint('demo-view-index', __name__, template_folder='./../templates')
@@ -10,4 +11,4 @@ def index():
   locals['title'] = 'Demo'
   locals['csss'] = ['bootstrap', 'fontawesome']
   locals['jss'] = ['jquery', 'app']
-  return render_template('index.html', locals = locals)
+  return render_template('demo.html', locals = locals)
