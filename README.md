@@ -77,28 +77,28 @@ $ mongosh
 > use atoq
 > db.members.insertMany([
     {
-        names: "John",
-        last_names: "Doe",
-        resume: "Experienced software developer with a focus on backend development.",
-        image_url: "http://example.com/john_doe.jpg"
+        names: "Edgar",
+        last_names: "Oporto",
+        resume: "Experienced software developer with a focus on backend development, adept at designing and implementing scalable and efficient solutions. Proficient in a variety of programming languages and technologies, with a proven track record of delivering high-quality software products.",
+        image_url: "users/oporto.png"
     },
     {
-        names: "Jane",
-        last_names: "Smith",
-        resume: "Expert in frontend technologies and UI/UX design.",
-        image_url: "http://example.com/jane_smith.jpg"
+        names: "Juvitza",
+        last_names: "Plaza",
+        resume: "Expert in frontend technologies and UI/UX design, skilled at crafting engaging and intuitive user interfaces. Proficient in modern web development frameworks and techniques, with a keen eye for detail and a passion for creating seamless user experiences.",
+        image_url: "users/plaza.png"
     },
     {
-        names: "Michael",
-        last_names: "Johnson",
-        resume: "Seasoned database administrator and data analyst.",
-        image_url: "http://example.com/michael_johnson.jpg"
+        names: "Enrique",
+        last_names: "Palacios",
+        resume: "Seasoned database administrator and data analyst, experienced in managing and optimizing database systems for performance and reliability. Proficient in analyzing large datasets and extracting valuable insights to inform strategic decision-making. Skilled in implementing data-driven solutions to address complex business challenges.",
+        image_url: "users/palacios.png"
     },
     {
-        names: "Emily",
-        last_names: "Davis",
-        resume: "Project manager with extensive experience in agile methodologies.",
-        image_url: "http://example.com/emily_davis.jpg"
+        names: "José",
+        last_names: "Valdivia",
+        resume: "Project manager with extensive experience in agile methodologies, adept at leading cross-functional teams to deliver projects on time and within budget. Skilled in stakeholder management, sprint planning, and facilitating effective communication across teams. Proven track record of successfully delivering high-impact projects in dynamic and fast-paced environments.",
+        image_url: "users/valdivia.png"
     }
 ])
 ```
