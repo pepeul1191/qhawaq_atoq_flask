@@ -70,6 +70,38 @@ Migraciones con DBMATE - accesos/sqlite3:
     $ npm run dbmate:up
     $ npm run dbmate:rollback
 
+### Datos de Colección 'members'
+
+```javascript
+$ mongosh
+> use atoq
+> db.members.insertMany([
+    {
+        names: "John",
+        last_names: "Doe",
+        resume: "Experienced software developer with a focus on backend development.",
+        image_url: "http://example.com/john_doe.jpg"
+    },
+    {
+        names: "Jane",
+        last_names: "Smith",
+        resume: "Expert in frontend technologies and UI/UX design.",
+        image_url: "http://example.com/jane_smith.jpg"
+    },
+    {
+        names: "Michael",
+        last_names: "Johnson",
+        resume: "Seasoned database administrator and data analyst.",
+        image_url: "http://example.com/michael_johnson.jpg"
+    },
+    {
+        names: "Emily",
+        last_names: "Davis",
+        resume: "Project manager with extensive experience in agile methodologies.",
+        image_url: "http://example.com/emily_davis.jpg"
+    }
+])
+```
 ---
 
 Fuentes:

@@ -6,3 +6,4 @@ requests
 pyyaml
 python-dotenv
 SQLAlchemy
+mongoengine

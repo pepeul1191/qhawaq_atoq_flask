@@ -2,12 +2,13 @@
 # -*- coding: utf-8 -*-
 from .views import view as main_blueprints
 from demo.blueprints import blueprints as demo_blueprints
-from access.blueprints import blueprints as access_blueprints
+from admin.blueprints import blueprints as admin_blueprints
 
 def register(app):
   # append sub blueprints
   modules_blueprints = []
-  modules_blueprints.append(access_blueprints)
+  print('------------------------')
+  modules_blueprints.append(admin_blueprints)
   modules_blueprints.append(demo_blueprints)
   # load main blueprint to app
   app.register_blueprint(main_blueprints)
