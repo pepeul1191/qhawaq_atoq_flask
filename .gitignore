@@ -10,3 +10,4 @@ env
 .vscode
 .env
 static/fonts
+uploads
