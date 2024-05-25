@@ -4,23 +4,33 @@ import json
 import os
 import traceback
 from flask import Blueprint, request
-from admin.models import Member
+from admin.models import Track, Trip
 from admin.database import db_connect, to_dict
 from admin.helpers.trip_helper import get_image_metadata
+from datetime import datetime
 
 api = Blueprint('api-trip', __name__)
 
 @api.route('/trip/save', methods=['POST'])
 def save():
   try:
-    _id = request.form['_id']
-    #print(_id)
-    name = request.form['name']
-    #print(name)
-    tracks = request.form['tracks']
-    #print(tracks)
+    tracks = json.loads(request.form['tracks'])
+    print(tracks)
     images = request.files.getlist('images')
-    #print(images)
+    trip_id = request.form['_id']
+    track_name = request.form['name']
+    track_created = tracks[0]['created']
+    # save documents in mongodb
+    documents_tracks = [Track.from_map(track) for track in tracks]
+    document_trip = Trip(
+      id=trip_id,
+      name=track_name,
+      created=datetime.fromisoformat(track_created),
+      tracks=documents_tracks
+    )
+    db_connect()
+    document_trip.save()
+    # save images
     for image in images:
       image_name = image.filename
       #print(image_name)
