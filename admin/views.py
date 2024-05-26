@@ -15,3 +15,10 @@ def index():
   locals['jss'] = ['dist/login']
   return render_template('access.html', locals = locals)
   
+@view.route('/admin', methods=['GET'])
+def admin():
+  locals = {}
+  locals['title'] = 'Admin'
+  locals['csss'] = []
+  locals['jss'] = ['assets/js/app']
+  return render_template('admin.html', locals = locals)

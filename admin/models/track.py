@@ -25,11 +25,10 @@ class Track(EmbeddedDocument):
   # Método para convertir el objeto Track a diccionario
   def to_map(self):
     map_data = {
-      'latitude': self.latitude,
-      'longitude': self.longitude,
-      'altitude': self.altitude,
-      'created': self.created.isoformat(),
+      '_id': str(self.id),
+      'created': self.created.isoformat(),  # Sin almacenar como una lista
+      'latitude': self.latitude,  # Sin almacenar como una lista
+      'longitude': self.longitude,  # Sin almacenar como una lista
+      'altitude': self.altitude,  # Sin almacenar como una lista
     }
-    if self.id:  # Agregar el campo id si está <presente en el documento
-      map_data['id'] = self.id
     return map_data

@@ -4,11 +4,13 @@ import json
 import os
 import traceback
 from flask import Blueprint, request
+from admin.database import db_connect
+from mongoengine import DoesNotExist
+from datetime import datetime
+from bson.objectid import ObjectId
 from admin.models.picture import Picture
 from admin.models.track import Track
 from admin.models.trip import Trip
-from admin.database import db_connect
-from datetime import datetime
 
 api = Blueprint('api-trip', __name__)
 
@@ -17,8 +19,6 @@ def save():
   try:
     tracks = json.loads(request.form['tracks'])
     pictures = json.loads(request.form['pictures'])
-    print(tracks)
-    print(pictures)
     images = request.files.getlist('images')
     trip_id = request.form['_id']
     track_name = request.form['name']
@@ -51,3 +51,17 @@ def save():
     traceback.print_exc()
     error_message = "Error desconocido: {}".format(str(e))
     return json.dumps({"error": error_message}), 500
+  
+@api.route('/trip/<_id>', methods=['GET'])
+def get_user(_id):
+  try:
+    db_connect()
+    print('++++++++++++++++++++++++')
+    trip = Trip.objects.get(id=ObjectId(_id))
+    trip_dicc = trip.to_map()
+    return json.dumps(trip_dicc), 200
+  except DoesNotExist:
+    return json.dumps({"error": "Document not found"}), 404
+  except Exception as e:
+    traceback.print_exc()
+    return json.dumps({"error": str(e)}), 400
