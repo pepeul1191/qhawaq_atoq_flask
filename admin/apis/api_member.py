@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 import json
 from flask import Blueprint
-from admin.models import Member
+from admin.models.member import Member
 from admin.database import db_connect, to_dict
 
 api = Blueprint('api-member', __name__)
