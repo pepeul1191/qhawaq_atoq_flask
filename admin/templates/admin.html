@@ -10,11 +10,24 @@
       height: 100vh;
       width: 100%;
     }
+    #popup {
+      position: absolute;
+      background-color: white;
+      padding: 5px;
+      border: 1px solid black;
+      display: none;
+      width: 250px;
+    }
   </style>
+  <script>
+    const BASE_URL = "http://localhost:5000/";
+    const STATIC_URL = "http://localhost:5000/";
+  </script>
   <title>{{locals['title']}}</title>
 </head>
 <body>
   <div id="map" class="map"></div>
+  <div id="popup"></div>
   <div class=""  style="display: none;" data-react-id="123"></div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ol3/3.20.1/ol.js"></script>
   {{scripts(locals['jss'])|safe}}

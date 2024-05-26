@@ -23,11 +23,11 @@ class Trip(Document):
     )
 
   def to_map(self):
-    map_data = {}
-    if self.id:  # Agregar el campo id si está <presente en el documento
-      map_data['_id'] = str(self.id)
-    map_data['created'] = self.created.isoformat(),
-    map_data['name'] = self.name,
-    map_data['tracks'] = [track.to_map() for track in self.tracks],
-    map_data['pictures'] = [picture.to_map() for picture in self.pictures]
+    map_data = {
+      '_id': str(self.id),
+      'created': self.created.isoformat(),  # Sin almacenar como una lista
+      'name': self.name,  # Sin almacenar como una lista
+      'tracks': [track.to_map() for track in self.tracks],  # Sin almacenar como una lista
+      'pictures': [picture.to_map() for picture in self.pictures],  # Sin almacenar como una lista
+    }
     return map_data
