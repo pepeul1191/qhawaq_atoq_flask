@@ -1,4 +1,5 @@
 from mongoengine import Document, StringField, DateTimeField, ListField, EmbeddedDocumentField, ObjectIdField
+from bson import ObjectId
 from datetime import datetime
 from .picture import Picture
 from .track import Track
@@ -15,7 +16,7 @@ class Trip(Document):
   @classmethod
   def from_map(cls, map):
     return cls(
-      id=map.get('_id'),
+      id=ObjectId(map.get('_id')) if map.get('_id') else None,
       created=datetime.fromisoformat(map['created']),
       name=map['name'],
       tracks=[Track.from_map(track_map) for track_map in map.get('tracks', [])]

@@ -1,4 +1,5 @@
-from mongoengine import Document, StringField, DateTimeField, FloatField, ListField, EmbeddedDocumentField, EmbeddedDocument, ObjectIdField
+from mongoengine import DateTimeField, FloatField, EmbeddedDocument, ObjectIdField
+from bson import ObjectId
 from datetime import datetime
 
 class Track(EmbeddedDocument):
@@ -14,7 +15,7 @@ class Track(EmbeddedDocument):
   @classmethod
   def from_map(cls, map):
     return cls(
-      id=map.get('_id'),
+      id=ObjectId(map.get('_id')) if map.get('_id') else None,
       latitude=map['latitude'],
       longitude=map['longitude'],
       altitude=map['altitude'],

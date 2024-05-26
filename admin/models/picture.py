@@ -1,4 +1,5 @@
 from mongoengine import StringField, DateTimeField, FloatField, EmbeddedDocument, ObjectIdField
+from bson import ObjectId
 from datetime import datetime
 
 class Picture(EmbeddedDocument):
@@ -15,7 +16,7 @@ class Picture(EmbeddedDocument):
   @classmethod
   def from_map(cls, map):
     return cls(
-      id=map.get('_id'),
+      id=ObjectId(map.get('_id')) if map.get('_id') else None,
       url=map.get('url'),
       latitude=map['latitude'],
       longitude=map['longitude'],
